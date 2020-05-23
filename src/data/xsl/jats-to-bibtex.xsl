@@ -96,6 +96,13 @@
         </xsl:call-template>
     </xsl:template>
 
+    <xsl:template match="article-id[@pub-id-type='pmid']">
+        <xsl:call-template name="item">
+            <xsl:with-param name="key" select="@pub-id-type"/>
+            <xsl:with-param name="value" select="."/>
+        </xsl:call-template>
+    </xsl:template>
+
 	<xsl:template match="article-title">
         <xsl:call-template name="item">
             <xsl:with-param name="key">title</xsl:with-param>
